@@ -1,0 +1,246 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <title>Proyecto Silogismos</title>
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+  <style type="text/css">
+    .buttondemoBasicUsage section {
+      background: #f7f7f7;
+      border-radius: 3px;
+      text-align: center;
+      margin: 1em;
+      position: relative !important;
+      padding-bottom: 10px; 
+    }
+
+    .buttondemoBasicUsage md-content {
+      margin-right: 7px; 
+    }
+
+    .buttondemoBasicUsage section .md-button {
+      margin-top: 16px;
+      margin-bottom: 16px; 
+    }
+
+    .buttondemoBasicUsage .label {
+      position: absolute;
+      bottom: 5px;
+      left: 7px;
+      font-size: 14px;
+      opacity: 0.54; 
+    }
+  </style>
+</head>
+<body ng-app="MyApp" ng-cloak>
+
+  <div layout="column" layout-align="center center" style="padding:40px" ng-cloak>
+    <h1 class="md-title">M&aacute;quina Silog&iacute;stica</h1>
+    <div layout="column" ng-controller="SelectAsyncController"  layout-align="center center">
+      <div layout="row">        
+        <md-input-container>
+          <label>Premisa Mayor</label>
+          <md-select placeholder="Seleccione Premisa Mayor" ng-model="user" md-on-open="loadUsers()" style="min-width: 200px;">
+            <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <label>{{user.letra}}</label>
+          <input disabled>
+        </md-input-container>
+        <md-input-container>
+          <label>{{user.distribucion}}</label>
+          <input disabled>
+        </md-input-container>        
+      </div>
+      <div layout="row">
+        <md-input-container>
+          <label>Premisa Menor</label>
+          <md-select placeholder="Seleccione Premisa Menor" ng-model="menor" md-on-open="loads()" style="min-width: 200px;">
+            <md-option ng-value="menor" ng-repeat="menor in menors">{{menor.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <label>{{menor.letra}}</label>
+          <input disabled>
+        </md-input-container>
+        <md-input-container>
+          <label>{{menor.distribucion}}</label>
+          <input disabled>
+        </md-input-container>
+      </div>
+      <div layout="row">
+        <md-input-container>
+          <label>Conclusi&oacute;n</label>
+          <md-select placeholder="Conclusi&oacute;n" ng-model="conclusion" md-on-open="loadc()" style="min-width: 200px;">
+            <md-option ng-value="conclusion" ng-repeat="conclusion in conclusions">{{conclusion.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <label>{{conclusion.letra}}</label>
+          <input disabled>
+        </md-input-container>
+        <md-input-container>
+          <label>{{conclusion.distribucion}}</label>
+          <input disabled>
+        </md-input-container>
+      </div>
+    </div>
+  </div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  
+  <script type="text/javascript">    
+    
+    angular.module('MyApp',['ngMaterial', 'ngMessages'])
+    .controller('SelectAsyncController', function($timeout, $scope) {
+      $scope.loadUsers = function() {
+        return $timeout(function() {
+          $scope.users =  $scope.users  || [
+            { 
+              id: 1, 
+              name: 'Todo M es P' ,
+              letra: 'a',
+              distribucion: 'si'  
+            },
+            { 
+              id: 2, 
+              name: 'Todo P es M' ,
+              letra: 'a',
+              distribucion: 'si'  
+            },
+            { 
+              id: 3, 
+              name: 'Ningun M es P' ,
+              letra: 'e',
+              distribucion: 'no'  
+            },
+            { 
+              id: 4, 
+              name: 'Ningun P es M' ,
+              letra: 'e',
+              distribucion: 'no'  
+            },
+            { 
+              id: 5, 
+              name: 'Algun M es P' ,
+              letra: 'i',
+              distribucion: 'si'  
+            },
+            { 
+              id: 6, 
+              name: 'Algun P es M' ,
+              letra: 'i',
+              distribucion: 'si'  
+            },
+            { 
+              id: 7, 
+              name: 'Algun M no es P', 
+              letra: 'o',
+              distribucion: 'no'  
+            },
+            { 
+              id: 8, 
+              name: 'Algun P no es M',
+              letra: 'o',
+              distribucion: 'no'  
+            }
+          ];
+        }, 650);
+      };
+      $scope.loads = function() {
+        return $timeout(function() {
+          $scope.menors =  $scope.menors  || [
+            { 
+              id: 1, 
+              name: 'Todo M es P' ,
+              letra: 'a',
+              distribucion: 'si'  
+            },
+            { 
+              id: 2, 
+              name: 'Todo P es M' ,
+              letra: 'a',
+              distribucion: 'si'  
+            },
+            { 
+              id: 3, 
+              name: 'Ningun M es P' ,
+              letra: 'e',
+              distribucion: 'no'  
+            },
+            { 
+              id: 4, 
+              name: 'Ningun P es M' ,
+              letra: 'e',
+              distribucion: 'no'  
+            },
+            { 
+              id: 5, 
+              name: 'Algun M es P' ,
+              letra: 'i',
+              distribucion: 'si'  
+            },
+            { 
+              id: 6, 
+              name: 'Algun P es M' ,
+              letra: 'i',
+              distribucion: 'si'  
+            },
+            { 
+              id: 7, 
+              name: 'Algun M no es P', 
+              letra: 'o',
+              distribucion: 'no'  
+            },
+            { 
+              id: 8, 
+              name: 'Algun P no es M',
+              letra: 'o',
+              distribucion: 'no'  
+            }
+          ];
+        }, 650);        
+      };
+      $scope.loadc = function() {
+        return $timeout(function() {
+          $scope.conclusions =  $scope.conclusions  || [
+            { 
+              id: 1, 
+              name: 'Todo S es P' ,
+              letra: 'a',
+              distribucion: 'si'  
+            },
+            { 
+              id: 2, 
+              name: 'Ningun S es P' ,
+              letra: 'a',
+              distribucion: 'si'  
+            },
+            { 
+              id: 3, 
+              name: 'Algun S es P' ,
+              letra: 'e',
+              distribucion: 'no'  
+            },
+            { 
+              id: 4, 
+              name: 'Algun S no es P' ,
+              letra: 'e',
+              distribucion: 'no'  
+            }
+          ];
+        }, 650);        
+      };
+    });
+
+
+  </script>
+  
+</body>
+</html>
