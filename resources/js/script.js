@@ -29,7 +29,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 1, 
           name: 'Todo M es P' ,
           letra: 'A',
-          distribucion: 'Si',
+          distribucion: 'Sujeto Distribuido / Predicado no Distribuido',
           figura: 'M-P',
           figura1: 1,
           figura3: 1
@@ -38,7 +38,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 2, 
           name: 'Todo P es M' ,
           letra: 'A',
-          distribucion: 'Si', 
+          distribucion: 'Sujeto Distribuido / Predicado no Distribuido', 
           figura: 'P-M',
           figura2: 1,
           figura4: 1
@@ -47,7 +47,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 3, 
           name: 'Ningun M es P' ,
           letra: 'E',
-          distribucion: 'No', 
+          distribucion: 'Sujeto Distribuido / Predicado Distribuido', 
           figura: 'M-P',
           figura1: 1,
           figura3: 1
@@ -56,7 +56,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 4, 
           name: 'Ningun P es M' ,
           letra: 'E',
-          distribucion: 'No',  
+          distribucion: 'Sujeto Distribuido / Predicado Distribuido',  
           figura:  'P-M',
           figura2: 1,
           figura4: 1
@@ -65,7 +65,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 5, 
           name: 'Algun M es P' ,
           letra: 'I',
-          distribucion: 'Si',
+          distribucion: 'Sujeto no Distribuido / Predicado no Distribuido',
           figura:  'M-P',
           figura3: 1
         },
@@ -73,7 +73,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 6, 
           name: 'Algun P es M' ,
           letra: 'I',
-          distribucion: 'Si',
+          distribucion: 'Sujeto no Distribuido / Predicado no Distribuido',
           figura:  'P-M',
           figura4: 1
         },
@@ -81,7 +81,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 7, 
           name: 'Algun M No es P', 
           letra: 'O',
-          distribucion: 'No',
+          distribucion: 'Sujeto no Distribuido / Predicado Distribuido',
           figura:  'M-P',
           figura3: 1,
           figura4: 1
@@ -90,7 +90,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 8, 
           name: 'Algun P No es M',
           letra: 'O',
-          distribucion: 'No',
+          distribucion: 'Sujeto no Distribuido / Predicado Distribuido',
           figura:  'P-M',
           figura4: 1
         }
@@ -104,7 +104,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 1, 
           name: 'Todo S es M' ,
           letra: 'A',
-          distribucion: 'Si',
+          distribucion: 'Sujeto Distribuido / Predicado no Distribuido',
           figura:  'S-M',
           figura1: 1,
           figura2: 1
@@ -113,7 +113,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 2, 
           name: 'Todo M es S' ,
           letra: 'A',
-          distribucion: 'Si',
+          distribucion: 'Sujeto Distribuido / Predicado no Distribuido',
           figura:  'M-S',
           figura3: 1,
           figura4: 1
@@ -122,7 +122,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 3, 
           name: 'Ningun S es M' ,
           letra: 'E',
-          distribucion: 'No',
+          distribucion: 'Sujeto Distribuido / Predicado Distribuido',
           figura:  'S-M',
           figura2: 1
         },
@@ -130,7 +130,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 4, 
           name: 'Ningun M es S' ,
           letra: 'E',
-          distribucion: 'No',
+          distribucion: 'Sujeto Distribuido / Predicado Distribuido',
           figura:  'M-S',
           figura4: 1
         },
@@ -138,7 +138,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 5, 
           name: 'Algun S es M' ,
           letra: 'I',
-          distribucion: 'Si',
+          distribucion: 'Sujeto no Distribuido / Predicado no Distribuido',
           figura:  'S-M',
           figura1: 1,
           figura2: 1
@@ -147,7 +147,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 6, 
           name: 'Algun M es S' ,
           letra: 'I',
-          distribucion: 'Si' ,
+          distribucion: 'Sujeto no Distribuido / Predicado no Distribuido' ,
           figura:  'M-S',
           figura3: 1,
           figura4: 1
@@ -156,7 +156,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 7, 
           name: 'Algun S No es M', 
           letra: 'O',
-          distribucion: 'No',
+          distribucion: 'Sujeto no Distribuido / Predicado Distribuido',
           figura:  'S-M',
           figura2: 1
         },
@@ -164,7 +164,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 8, 
           name: 'Algun M No es S',
           letra: 'O',
-          distribucion: 'No',
+          distribucion: 'Sujeto no Distribuido / Predicado Distribuido',
           figura:  'M-S',
           figura4: 1
         }
@@ -178,14 +178,14 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 1, 
           name: 'Todo S es P' ,
           letra: 'A',
-          distribucion: 'Si',
+          distribucion: 'Sujeto Distribuido / Predicado no Distribuido',
           figura1: 1
         },
         { 
           id: 2, 
           name: 'Ningun S es P' ,
           letra: 'E',
-          distribucion: 'Si',
+          distribucion: 'Sujeto Distribuido / Predicado Distribuido',
           figura1: 1,
           figura2: 1,
           figura4: 1
@@ -194,7 +194,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 3, 
           name: 'Algun S es P' ,
           letra: 'I',
-          distribucion: 'No',
+          distribucion: 'Sujeto no Distribuido / Predicado no Distribuido',
           figura1: 1,
           figura3: 1,
           figura4: 1
@@ -203,7 +203,7 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
           id: 4, 
           name: 'Algun S No es P' ,
           letra: 'O',
-          distribucion: 'No',
+          distribucion: 'Sujeto no Distribuido / Predicado Distribuido',
           figura1: 1,
           figura2: 1,
           figura3: 1,
