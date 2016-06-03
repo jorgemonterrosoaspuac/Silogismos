@@ -1,56 +1,98 @@
 (function () {
 angular.module('MyApp',['ngMaterial', 'ngMessages'])
-.controller('SelectAsyncController', function($timeout, $scope) {
-  $scope.loadUsers = function() {
+.controller('SelectAsyncController', function($timeout, $scope, $mdDialog) {
+  $scope.figura = 'No se ha buscado figura';
+  $scope.menor = {
+    name: '',
+    letra:  '',
+    distribucion: '',
+    figura1: 0
+  };
+  $scope.mayor = {
+    name: '',
+    letra:  '',
+    distribucion: '',
+    figura1: 0
+  };
+  $scope.conclusion = {
+    name: '',
+    letra:  '',
+    distribucion: '',
+    figura1: 0
+  };
+  $scope.items = [];
+  $scope.verify;
+  $scope.loadMayors = function() {
     return $timeout(function() {
-      $scope.users =  $scope.users  || [
+      $scope.mayors =  $scope.mayors  || [
         { 
           id: 1, 
           name: 'Todo M es P' ,
-          letra: 'a',
-          distribucion: 'si'  
+          letra: 'A',
+          distribucion: 'Si',
+          figura: 'M-P',
+          figura1: 1,
+          figura3: 1
         },
         { 
           id: 2, 
           name: 'Todo P es M' ,
-          letra: 'a',
-          distribucion: 'si'  
+          letra: 'A',
+          distribucion: 'Si', 
+          figura: 'P-M',
+          figura2: 1,
+          figura4: 1
         },
         { 
           id: 3, 
           name: 'Ningun M es P' ,
-          letra: 'e',
-          distribucion: 'no'  
+          letra: 'E',
+          distribucion: 'No', 
+          figura: 'M-P',
+          figura1: 1,
+          figura3: 1
         },
         { 
           id: 4, 
           name: 'Ningun P es M' ,
-          letra: 'e',
-          distribucion: 'no'  
+          letra: 'E',
+          distribucion: 'No',  
+          figura:  'P-M',
+          figura2: 1,
+          figura4: 1
         },
         { 
           id: 5, 
           name: 'Algun M es P' ,
-          letra: 'i',
-          distribucion: 'si'  
+          letra: 'I',
+          distribucion: 'Si',
+          figura:  'M-P',
+          figura3: 1
         },
         { 
           id: 6, 
           name: 'Algun P es M' ,
-          letra: 'i',
-          distribucion: 'si'  
+          letra: 'I',
+          distribucion: 'Si',
+          figura:  'P-M',
+          figura4: 1
         },
         { 
           id: 7, 
-          name: 'Algun M no es P', 
-          letra: 'o',
-          distribucion: 'no'  
+          name: 'Algun M No es P', 
+          letra: 'O',
+          distribucion: 'No',
+          figura:  'M-P',
+          figura3: 1,
+          figura4: 1
         },
         { 
           id: 8, 
-          name: 'Algun P no es M',
-          letra: 'o',
-          distribucion: 'no'  
+          name: 'Algun P No es M',
+          letra: 'O',
+          distribucion: 'No',
+          figura:  'P-M',
+          figura4: 1
         }
       ];
     }, 650);
@@ -60,51 +102,71 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
       $scope.menors =  $scope.menors  || [
         { 
           id: 1, 
-          name: 'Todo M es P' ,
-          letra: 'a',
-          distribucion: 'si'  
+          name: 'Todo S es M' ,
+          letra: 'A',
+          distribucion: 'Si',
+          figura:  'S-M',
+          figura1: 1,
+          figura2: 1
         },
         { 
           id: 2, 
-          name: 'Todo P es M' ,
-          letra: 'a',
-          distribucion: 'si'  
+          name: 'Todo M es S' ,
+          letra: 'A',
+          distribucion: 'Si',
+          figura:  'M-S',
+          figura3: 1,
+          figura4: 1
         },
         { 
           id: 3, 
-          name: 'Ningun M es P' ,
-          letra: 'e',
-          distribucion: 'no'  
+          name: 'Ningun S es M' ,
+          letra: 'E',
+          distribucion: 'No',
+          figura:  'S-M',
+          figura2: 1
         },
         { 
           id: 4, 
-          name: 'Ningun P es M' ,
-          letra: 'e',
-          distribucion: 'no'  
+          name: 'Ningun M es S' ,
+          letra: 'E',
+          distribucion: 'No',
+          figura:  'M-S',
+          figura4: 1
         },
         { 
           id: 5, 
-          name: 'Algun M es P' ,
-          letra: 'i',
-          distribucion: 'si'  
+          name: 'Algun S es M' ,
+          letra: 'I',
+          distribucion: 'Si',
+          figura:  'S-M',
+          figura1: 1,
+          figura2: 1
         },
         { 
           id: 6, 
-          name: 'Algun P es M' ,
-          letra: 'i',
-          distribucion: 'si'  
+          name: 'Algun M es S' ,
+          letra: 'I',
+          distribucion: 'Si' ,
+          figura:  'M-S',
+          figura3: 1,
+          figura4: 1
         },
         { 
           id: 7, 
-          name: 'Algun M no es P', 
-          letra: 'o',
-          distribucion: 'no'  
+          name: 'Algun S No es M', 
+          letra: 'O',
+          distribucion: 'No',
+          figura:  'S-M',
+          figura2: 1
         },
         { 
           id: 8, 
-          name: 'Algun P no es M',
-          letra: 'o',
-          distribucion: 'no'  
+          name: 'Algun M No es S',
+          letra: 'O',
+          distribucion: 'No',
+          figura:  'M-S',
+          figura4: 1
         }
       ];
     }, 650);        
@@ -115,29 +177,197 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
         { 
           id: 1, 
           name: 'Todo S es P' ,
-          letra: 'a',
-          distribucion: 'si'  
+          letra: 'A',
+          distribucion: 'Si',
+          figura1: 1
         },
         { 
           id: 2, 
           name: 'Ningun S es P' ,
-          letra: 'a',
-          distribucion: 'si'  
+          letra: 'E',
+          distribucion: 'Si',
+          figura1: 1,
+          figura2: 1,
+          figura4: 1
         },
         { 
           id: 3, 
           name: 'Algun S es P' ,
-          letra: 'e',
-          distribucion: 'no'  
+          letra: 'I',
+          distribucion: 'No',
+          figura1: 1,
+          figura3: 1,
+          figura4: 1
         },
         { 
           id: 4, 
-          name: 'Algun S no es P' ,
-          letra: 'e',
-          distribucion: 'no'  
+          name: 'Algun S No es P' ,
+          letra: 'O',
+          distribucion: 'No',
+          figura1: 1,
+          figura2: 1,
+          figura3: 1,
+          figura4: 1
         }
       ];
     }, 650);        
+  };
+  $scope.figuras = function(){
+    if ($scope.menor.figura1 == 1 && $scope.mayor.figura1 == 1 && $scope.conclusion.figura1 == 1 && $scope.menor.figura == 'S-M' && $scope.mayor.figura == 'M-P') {
+      $scope.figura = "Primer Figura";
+      alert("Primer Figura");
+    } else if ($scope.menor.figura2 == 1 && $scope.mayor.figura2 == 1 && $scope.conclusion.figura2 == 1 && $scope.menor.figura == 'S-M' && $scope.mayor.figura == 'P-M') {
+      $scope.figura = "Segunda Figura";
+      alert("Segunda Figura");
+    } else if ($scope.menor.figura3 == 1 && $scope.mayor.figura3 == 1 && $scope.conclusion.figura3 == 1 && $scope.menor.figura == 'M-S' && $scope.mayor.figura == 'M-P') {
+      $scope.figura = "Tercera Figura";
+      alert("Tercera Figura");
+    } else if ($scope.menor.figura4 == 1 && $scope.mayor.figura4 == 1 && $scope.conclusion.figura4 == 1 && $scope.menor.figura == 'M-S' && $scope.mayor.figura == 'P-M') {
+      $scope.figura = "Cuarta Figura";
+      alert("Cuarta Figura");
+    } else {
+      alert("Error al buscar figura compatible, las premisas y conclusion no cumplen los requerimientos");
+      $scope.figura = "No hay figura"
+    };
+
+    switch ($scope.figura) {
+      case "Primer Figura":
+        $scope.items = [
+          {
+            modo:  "BARBARA",
+            letras: "AAA"
+          },
+          {
+            modo:  "CELARENT",
+            letras: "EAE"
+          },
+          {
+            modo:  "DARII",
+            letras: "AII"
+          },
+          {
+            modo:  "FERIO",
+            letras: "EIO"
+          },
+          {
+            modo:  "BARBARI",
+            letras: "AAI"
+          },
+          {
+            modo:  "CELARON",
+            letras: "EAO"
+          }];
+        break;
+      case "Segunda Figura":
+        $scope.items = [
+          {
+            modo:  "CESARE",
+            letras: "EAE"
+          },
+          {
+            modo:  "CAMESTRES",
+            letras: "AEE"
+          },
+          {
+            modo:  "FESTINO",
+            letras: "EIO"
+          },
+          {
+            modo:  "BAROCO",
+            letras: "AOO"
+          },
+          {
+            modo:  "CESARO",
+            letras: "EAO"
+          },
+          {
+            modo:  "CAMESTROP",
+            letras: "AEO"
+          }];
+        break;
+      case "Tercera Figura":
+        $scope.items = [
+          {
+            modo:  "DARAPTI",
+            letras: "AAI"
+          },
+          {
+            modo:  "FELAPTON",
+            letras: "EAO"
+          },
+          {
+            modo:  "DATISI",
+            letras: "AII"
+          },
+          {
+            modo:  "DISAMIS",
+            letras: "IAI"
+          },
+          {
+            modo:  "BOKARDO",
+            letras: "OAO"
+          },
+          {
+            modo:  "FERISON",
+            letras: "EIO"
+          }];
+        break;
+      case "Cuarta Figura":
+        $scope.items = [
+          {
+            modo:  "BAMANTIP",
+            letras: "AAI"
+          },
+          {
+            modo:  "CAMENES",
+            letras: "AEE"
+          },
+          {
+            modo:  "DIMARIS",
+            letras: "IAI"
+          },
+          {
+            modo:  "FESAPO",
+            letras: "EAO"
+          },
+          {
+            modo:  "FRESISO",
+            letras: "EIO"
+          },
+          {
+            modo:  "CAMENOP",
+            letras: "AEO"
+          }];
+        break;
+      default:
+        $scope.items = [];
+    }
+  };
+  $scope.verificar   = function(ev){    
+    $scope.verify = $scope.mayor.letra + $scope.menor.letra + $scope.conclusion.letra;
+    if ($scope.verify == $scope.modoSelect.letras) {
+      $mdDialog.show(
+      $mdDialog.alert()
+        .parent(angular.element(document.querySelector('#body')))
+        .clickOutsideToClose(true)
+        .title('Silogismo Valido')
+        .textContent('El silogismo es correcto.')
+        .ariaLabel('Cumple todos los requerimientos')
+        .ok('Aceptar')
+        .targetEvent(ev)
+      );
+    } else {
+      $mdDialog.show(
+      $mdDialog.alert()
+        .parent(angular.element(document.querySelector('#body')))
+        .clickOutsideToClose(true)
+        .title('Silogismo Invalido')
+        .textContent('El silogismo es no correcto.')
+        .ariaLabel('Existen Errores en las premisas o conclusion')
+        .ok('Aceptar')
+        .targetEvent(ev)
+      );
+    };
   };
 }).config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
@@ -152,36 +382,5 @@ angular.module('MyApp',['ngMaterial', 'ngMessages'])
     .accentPalette('blue', {
       'default': '800' // use shade 200 for default, and keep all other shades the same
     });
-});;
-
-
-  'use strict';
-  angular.module('tabsDemoDynamicHeight', ['ngMaterial'] ).controller('AppCtrl', AppCtrl).config(function($mdThemingProvider) {
-  $mdThemingProvider.theme('default')
-    .primaryPalette('pink', {
-      'default': '400', // by default use shade 400 from the pink palette for primary intentions
-      'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
-      'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
-      'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
-    })
-    // If you specify less than all of the keys, it will inherit from the
-    // default shades
-    .accentPalette('purple', {
-      'default': '200' // use shade 200 for default, and keep all other shades the same
-    });
 });
-  function AppCtrl ( $scope ) {
-    $scope.data = {
-      selectedIndex: 0,
-      secondLocked:  true,
-      secondLabel:   "Item Two",
-      bottom:        false
-    };
-    $scope.next = function() {
-      $scope.data.selectedIndex = Math.min($scope.data.selectedIndex + 1, 2) ;
-    };
-    $scope.previous = function() {
-      $scope.data.selectedIndex = Math.max($scope.data.selectedIndex - 1, 0);
-    };
-  }
 })();

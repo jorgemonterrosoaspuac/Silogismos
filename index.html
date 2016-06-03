@@ -5,113 +5,102 @@
   <title>Proyecto Silogismos</title>
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
   <link rel="stylesheet" href="resources/css/style.css">
-</head>
-<body ng-app="MyApp" ng-cloak>
+</head> 
+<body ng-app="MyApp" ng-cloak id="body">
   <md-content>
 
     <md-toolbar md-scroll-shrink>
        <div class="md-toolbar-tools">
           <h2>
-             <span>M&aacute;quina Silog&iacute;stica</span>
+             <span>M&aacute;quina Silog&iacute;stica: Proyecto de L&oacute;gica UMG</span>
           </h2>
           <span flex></span>
           <md-button class="md-icon-button" aria-label="More">
-             <md-icon class="material-icons">Ver más</md-icon>
+             <md-icon class="material-icons">Ver manual y sobre el proyecto</md-icon>
           </md-button>
        </div>
     </md-toolbar>
 
-    <md-tabs md-dynamic-height md-border-bottom>
-      <md-tab label="Definici&oacute;n de Premisas">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab One</h1>
-          <div layout="column" layout-align="center center" style="padding:40px" ng-cloak>
-            <h1 class="md-title">M&aacute;quina Silog&iacute;stica</h1>
-            <div layout="column" ng-controller="SelectAsyncController"  layout-align="center left">
-              <div layout="row">        
-                <md-input-container>
-                  <label>Premisa Mayor</label>
-                  <md-select placeholder="Seleccione Premisa Mayor" ng-model="user" md-on-open="loadUsers()" style="min-width: 200px;">
-                    <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
-                  </md-select>
-                </md-input-container>
-                <md-input-container>
-                  <label>{{user.letra}}</label>
-                  <input disabled>
-                </md-input-container>
-                <md-input-container>
-                  <label>{{user.distribucion}}</label>
-                  <input disabled>
-                </md-input-container>        
-              </div>
-              <div layout="row">
-                <md-input-container>
-                  <label>Premisa Menor</label>
-                  <md-select placeholder="Seleccione Premisa Menor" ng-model="menor" md-on-open="loads()" style="min-width: 200px;">
-                    <md-option ng-value="menor" ng-repeat="menor in menors">{{menor.name}}</md-option>
-                  </md-select>
-                </md-input-container>
-                <md-input-container>
-                  <label>{{menor.letra}}</label>
-                  <input disabled>
-                </md-input-container>
-                <md-input-container>
-                  <label>{{menor.distribucion}}</label>
-                  <input disabled>
-                </md-input-container>
-              </div>
-              <div layout="row">
-                <md-input-container>
-                  <label>Conclusi&oacute;n</label>
-                  <md-select placeholder="Conclusi&oacute;n" ng-model="conclusion" md-on-open="loadc()" style="min-width: 200px;">
-                    <md-option ng-value="conclusion" ng-repeat="conclusion in conclusions">{{conclusion.name}}</md-option>
-                  </md-select>
-                </md-input-container>
-                <md-input-container>
-                  <label>{{conclusion.letra}}</label>
-                  <input disabled>
-                </md-input-container>
-                <md-input-container>
-                  <label>{{conclusion.distribucion}}</label>
-                  <input disabled>
-                </md-input-container>
-              </div>
-            </div>
-          </div>            
-        </md-content>
-      </md-tab>
-
-      <md-tab label="two">
-        <md-content class="md-padding">
-          <h1 class="md-display-2" ng-disabled="data.secondLocked">Tab Two</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
-          <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
-          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-        </md-content>
-      </md-tab>
-      <md-tab label="three" ng-disabled="data.secondLocked">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">Tab Three</h1>
-          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-        </md-content>
-      </md-tab>
-    </md-tabs>
-
-    <div class="md-padding" layout="row" layout-sm="column" layout-align="left center"
-         style="padding-top: 0;">
-      <md-checkbox ng-model="data.secondLocked" aria-label="Disable item two?" style="margin: 5px;">
-        Disable item two?
-      </md-checkbox>
-      <md-checkbox ng-model="data.bottom" aria-label="Align tabs to bottom?" style="margin: 5px;">
-        Align tabs to bottom?
-      </md-checkbox>
-    </div>
-  </md-content>
-
-
-
-
-
+    <div layout="column" layout-align="center center" style="padding:40px" ng-cloak>
+      <h1 class="md-title">M&aacute;quina Silog&iacute;stica</h1>
+      <div layout="column" ng-controller="SelectAsyncController"  layout-align="center left">
+        <div layout="row">        
+          <md-input-container>
+            <p class="md-headline">Premisa - Formas de Silogismo - Distribuci&oacute;n</p>
+          </md-input-container>        
+        </div>
+        <div layout="row">        
+          <md-input-container>
+            <label>Premisa Mayor</label>
+            <md-select placeholder="Seleccione Premisa Mayor" ng-model="mayor" md-on-open="loadMayors()" required style="min-width: 200px;">
+              <md-option ng-value="mayor" ng-repeat="mayor in mayors">{{mayor.name}}</md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container>
+            <label>{{mayor.letra}}</label>
+            <input disabled>
+          </md-input-container>
+          <md-input-container>
+            <label>{{mayor.distribucion}}</label>
+            <input disabled>
+          </md-input-container>        
+        </div>
+        <div layout="row">
+          <md-input-container>
+            <label>Premisa Menor</label>
+            <md-select placeholder="Seleccione Premisa Menor" ng-model="menor" md-on-open="loads()" required style="min-width: 200px;">
+              <md-option ng-value="menor" ng-repeat="menor in menors">{{menor.name}}</md-option>
+            </md-select>  
+          </md-input-container>
+          <md-input-container>
+            <label>{{menor.letra}}</label>
+            <input disabled>
+          </md-input-container>
+          <md-input-container>
+            <label>{{menor.distribucion}}</label>
+            <input disabled>
+          </md-input-container>
+        </div>
+        <div layout="row">
+          <md-input-container>
+            <label>Conclusi&oacute;n</label>
+            <md-select placeholder="Conclusi&oacute;n" ng-model="conclusion" md-on-open="loadc()" required style="min-width: 200px;">
+              <md-option ng-value="conclusion" ng-repeat="conclusion in conclusions">{{conclusion.name}}</md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container>
+            <label >{{conclusion.letra}}</label>
+            <input disabled>
+          </md-input-container>
+          <md-input-container>
+            <label>{{conclusion.distribucion}}</label>
+            <input disabled>
+          </md-input-container>
+        </div>
+        <div layout="row">
+          <md-input-container>
+            <h2>Figura: <span >{{figura}}</span> </h2>            
+            <md-button ng-click="figuras()">Buscar Figura</md-button>
+          </md-input-container>
+        </div>
+        <div layout="row">
+          <md-input-container>
+            <label>Modos de Silogismos</label>
+            <md-select ng-model="modoSelect">
+              <md-optgroup label="Modos">
+                <md-option ng-value="modoSelect" ng-repeat="modoSelect in items">{{modoSelect.modo}}</md-option>
+              </md-optgroup>
+            </md-select>
+          </md-input-container>
+        </div>
+        <div layout="row">
+          <md-input-container>
+            <h2>Verificacion de Silogismo</span> </h2>            
+            <md-button ng-click="verificar($event)">Verifica!!</md-button>
+          </md-input-container>
+        </div>
+      </div>
+    </div>    
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
